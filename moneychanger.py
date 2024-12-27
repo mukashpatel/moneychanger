@@ -4,9 +4,23 @@ import os
 from dotenv import load_dotenv
 import requests
 import json
+import streamlit as st
 
 load_dotenv()
 EXCHANGERATE_API_KEY = os.getenv('EXCHANGERATE_API_KEY')
+
+# Title of the app
+st.title("Multilingual Money Changer")
+
+# Text box for user input
+user_input = st.text_input("Enter the amount and the currency")
+
+# Submit button
+if st.button("Submit"):
+    # Display the input text below the text box
+    st.write("You entered:", user_input)
+
+
 
 def get_exchange_rate(base: str, target: str, amount: str) -> Tuple:
     """Return a tuple of (base, target, amount, conversion_result (2 decimal places))"""
