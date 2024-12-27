@@ -16,7 +16,6 @@ def call_llm(textbox_input) -> Dict:
 
 def run_pipeline():
     """Based on textbox_input, determine if you need to use the tools (function calling) for the LLM.
-    https://platform.openai.com/docs/guides/function-calling
     Call get_exchange_rate(...) if necessary"""
 
     if True: #tool_calls
